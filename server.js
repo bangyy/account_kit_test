@@ -39,10 +39,8 @@ function loadLoginSuccess() {
 }
 
 app.post('/sendcode', function(request, response){
-  console.log('code: ' + request.body.code);
-
   // CSRF check
-  //if (request.body.csrf_nonce === csrf_guid) {
+  if (request.body.csrf_nonce === csrf_guid) {
     var app_access_token = ['AA', app_id, app_secret].join('|');
     var params = {
       grant_type: 'authorization_code',
@@ -72,12 +70,11 @@ app.post('/sendcode', function(request, response){
         response.send(html);
       });
     });
-  //} 
-  //else {
-    //// login failed
-    //response.writeHead(200, {'Content-Type': 'text/html'});
-    //response.end("Something went wrong. :( ");
-  //}
+  } else {
+    // login failed
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.end("Something went wrong. :( ");
+  }
 });
 
 const port = process.env.PORT || '8080';
