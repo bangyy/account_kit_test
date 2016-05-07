@@ -1,0 +1,19 @@
+{
+  "name": "ServeStaticContent",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nf run node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "3.x",
+    "guid": "0.0.12",
+    "mustache": "^2.2.1",
+    "querystring": "^0.2.0",
+    "request": "^2.69.0"
+  },
+  "devDependencies": {
+    "foreman": "^1.4.1"
+  }
+}
