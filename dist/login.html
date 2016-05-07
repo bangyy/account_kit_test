@@ -81,22 +81,28 @@
     </script>
     <h1>test app</h1>
     <div>
-      <ul>
-      <li>
-      Enter country code (e.g. +1):
-      <input type="text" id="country_code" />
-      </li>
-      <li>
-      Enter phone number without spaces (e.g. 444555666):
-      <input type="text" id="phone_num"/>
-      <button onclick="phone_btn_onclick();">Login via SMS</button>
-      </li>
-      <li>
-      Enter email address
-      <input type="text" id="email"/>
-      <button onclick="email_btn_onclick();">Login via Email</button>
-      </li>
+      <form>
+        <ul>
+          <li>
+            Enter country code (e.g. +1):
+            <input type="text" id="country_code" />
+          </li>
+          <li>
+            Enter phone number without spaces (e.g. 444555666):
+            <input type="text" id="phone_num"/>
+            <button onclick="phone_btn_onclick();">Login via SMS</button>
+          </li>
+          <li>
+            Enter email address
+            <input type="text" id="email"/>
+            <button onclick="email_btn_onclick();">Login via Email</button>
+          </li>
+      </form>
     </div>
+    <form id="my_form" action="sendcode" method="POST">
+      <input type="hidden" id="code" value=""/>
+      <input type="hidden" id="csrf_nonce" value=""/>
+    </form>
     <!--<div-->
       <!--class="fb-like"-->
       <!--data-share="true"-->
@@ -105,4 +111,3 @@
     <!--</div>-->
   </body>
 </html>
-
