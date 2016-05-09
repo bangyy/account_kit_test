@@ -11,7 +11,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 var csrf_guid = Guid.raw();
-//const api_version = 'v2.6';
 const api_version = 'v1.0';
 const app_id = process.env.FACEBOOK_APP_ID || '';
 const app_secret = process.env.ACCOUNT_KIT_APP_SECRET || '';
